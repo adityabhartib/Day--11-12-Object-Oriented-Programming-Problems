@@ -10,8 +10,8 @@ public class StockPortfolio {
     private void setStocks() {
         System.out.println("-------Welcome to Stock Account Management--------");
         System.out.println("Enter the Number of Stock Accounts : ");
-        int no = sc.nextInt();
-        for (int i = 0; i < no; i++) {
+        int num = sc.nextInt();
+        for (int i = 0; i < num; i++) {
             Stock stockAccount = new Stock();
             setStockInfo(stockAccount, i);
         }
