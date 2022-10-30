@@ -3,9 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StockPortfolio {
-    // Array list of stock account
     ArrayList<Stock> list = new ArrayList<>();
-    // object of scanner class for user input
     Scanner sc = new Scanner(System.in);
     private void setStocks() {
         System.out.println("-------Welcome to Stock Account Management--------");
@@ -13,11 +11,11 @@ public class StockPortfolio {
         int num = sc.nextInt();
         for (int i = 0; i < num; i++) {
             Stock stockAccount = new Stock();
-            setStockInfo(stockAccount, i);
+            addStockInfo(stockAccount, i);
         }
     }
-    private void setStockInfo(Stock stockAccount, int i) {
-        System.out.println("Enter the Stock " + (i + 1) + " Information :");
+    private void addStockInfo(Stock stockAccount, int i) {
+        System.out.println("Enter the Stock " + (i + 1) +"  Information :");
         System.out.println("Enter the Stock Name :");
         stockAccount.setStockName(sc.next());
         System.out.println("Enter the Number of Shares :");
@@ -28,7 +26,7 @@ public class StockPortfolio {
         list.add(stockAccount);
     }
 
-    private void getStockInfo() {
+    private void showStockInfo() {
         int i = 1;
         for (Stock stockAccount : list) {
             System.out.println("Stock " + i + "Information is :");
@@ -43,6 +41,6 @@ public class StockPortfolio {
     public static void main(String[] args) {
         StockPortfolio stockPortfolio = new StockPortfolio();
         stockPortfolio.setStocks();
-        stockPortfolio.getStockInfo();
+        stockPortfolio.showStockInfo();
     }
 }
